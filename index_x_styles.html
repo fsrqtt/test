@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Продажа сайтов</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #121212;
+      color: #f0f0f0;
+      overflow-x: hidden;
+    }
+
+    /* Контейнер */
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    /* Заголовок */
+    header {
+      background-color: #1f1f1f;
+      color: white;
+      padding: 100px 0;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: fadeIn 1s forwards 0.5s;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      opacity: 0;
+      animation: fadeIn 1s forwards 1s;
+    }
+
+    header .btn {
+      padding: 10px 20px;
+      background-color: #333;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      opacity: 0;
+      animation: slideUp 1s forwards 1.5s;
+    }
+
+    /* Услуги */
+    .services {
+      background-color: #1f1f1f;
+      padding: 50px 0;
+      opacity: 0;
+      animation: fadeIn 1s forwards 1.5s;
+    }
+
+    .services h2 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+    }
+
+    .service-cards {
+      display: flex;
+      justify-content: space-around;
+      gap: 30px;
+    }
+
+    .card {
+      background-color: #333;
+      padding: 20px;
+      border-radius: 10px;
+      width: 30%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      text-align: left;
+      transition: transform 0.3s ease-in-out;
+      opacity: 0;
+      animation: fadeIn 1s forwards 2s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    .card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+
+    .card p {
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    .card .btn {
+      padding: 10px 20px;
+      background-color: #f4f4f4;
+      color: #333;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .card .btn:hover {
+      background-color: #e0e0e0;
+    }
+
+    /* Портфолио */
+    .portfolio {
+      background-color: #121212;
+      padding: 50px 0;
+      opacity: 0;
+      animation: fadeIn 1s forwards 2.5s;
+    }
+
+    .portfolio h2 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+    }
+
+    .projects {
+      display: flex;
+      justify-content: space-around;
+      gap: 30px;
+    }
+
+    .project {
+      width: 30%;
+      transition: transform 0.3s ease;
+      opacity: 0;
+      animation: fadeIn 1s forwards 3s;
+    }
+
+    .project img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .project h4 {
+      margin-top: 15px;
+      font-size: 1.2rem;
+    }
+
+    /* Контакт */
+    .contact {
+      background-color: #1f1f1f;
+      padding: 50px 0;
+      opacity: 0;
+      animation: fadeIn 1s forwards 3.5s;
+    }
+
+    .contact h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .contact form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .contact input, .contact textarea {
+      width: 50%;
+      padding: 15px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #2c2c2c;
+      color: #f0f0f0;
+    }
+
+    .contact button {
+      padding: 15px 30px;
+      background-color: #3b82f6;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .contact button:hover {
+      background-color: #2563eb;
+    }
+
+    /* Футер */
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 20px 0;
+    }
+
+    footer p {
+      font-size: 1rem;
+    }
+
+    /* Анимации */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideUp {
+      from {
+        transform: translateY(30px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <h1 class="fade-in">Создайте свой сайт с нами</h1>
+      <p class="fade-in">Мы предлагаем готовые решения для бизнеса и индивидуальных проектов. Доверьтесь профессионалам!</p>
+      <a href="#services" class="btn slide-up">Наши услуги</a>
+    </div>
+  </header>
+
+  <section id="services" class="services fade-in">
+    <div class="container">
+      <h2>Наши услуги</h2>
+      <div class="service-cards">
+        <div class="card">
+          <h3>Готовые сайты</h3>
+          <p>Мы предлагаем разнообразные шаблоны сайтов для бизнеса и личных проектов.</p>
+          <a href="#" class="btn">Выбрать сайт</a>
+        </div>
+        <div class="card">
+          <h3>Индивидуальные решения</h3>
+          <p>Разработка уникальных сайтов с нуля под ваш бизнес или личные нужды.</p>
+          <a href="#" class="btn">Получить консультацию</a>
+        </div>
+        <div class="card">
+          <h3>Поддержка и обновления</h3>
+          <p>Постоянная техническая поддержка и обновления для вашего сайта.</p>
+          <a href="#" class="btn">Узнать больше</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio" class="portfolio fade-in">
+    <div class="container">
+      <h2>Наши проекты</h2>
+      <div class="projects">
+        <div class="project">
+          <img src="https://via.placeholder.com/300" alt="Проект 1">
+          <h4>Сайт для бизнеса</h4>
+        </div>
+        <div class="project">
+          <img src="https://via.placeholder.com/300" alt="Проект 2">
+          <h4>Интернет-магазин</h4>
+        </div>
+        <div class="project">
+          <img src="https://via.placeholder.com/300" alt="Проект 3">
+          <h4>Персональный блог</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact fade-in">
+    <div class="container">
+      <h2>Свяжитесь с нами</h2>
+      <p>Оставьте заявку и мы свяжемся с вами в ближайшее время!</p>
+      <form action="#" method="POST">
+        <input type="text" placeholder="Ваше имя" required>
+        <input type="email" placeholder="Ваш email" required>
+        <textarea placeholder="Сообщение" required></textarea>
+        <button type="submit" class="btn">Отправить заявку</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Продажа сайтов. Все права защищены.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
